@@ -83,6 +83,7 @@
             this.backgroundbutton.TabIndex = 5;
             this.backgroundbutton.Text = "Background";
             this.backgroundbutton.UseVisualStyleBackColor = true;
+            this.backgroundbutton.Click += new System.EventHandler(this.backgroundbutton_Click_1);
             // 
             // processbutton
             // 

@@ -73,6 +73,24 @@ namespace vehicle_detection
         {
 
         }
-            
+
+        private void backgroundbutton_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialogBG.FileName = "";
+            if (OpenFileDialogBG.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    Image<Bgr, Byte> BGL = new Image<Bgr, Byte>(OpenFileDialogBG.FileName);
+                    BG = BGL;
+                }
+
+                catch (NullReferenceException excpt)
+                {
+                    TextBox.AppendText(excpt.Message);
+                }
+            }
+        }
     }
 }
