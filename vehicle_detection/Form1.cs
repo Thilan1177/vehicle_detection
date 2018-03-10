@@ -64,7 +64,7 @@ namespace vehicle_detection
                 }
                 catch (NullReferenceException excpt)
                 {
-                    TextBox.AppendText(excpt.Message);
+                    textBox1.AppendText(excpt.Message);
                 }
             }
         }
@@ -76,19 +76,19 @@ namespace vehicle_detection
 
         private void backgroundbutton_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialogBG.FileName = "";
-            if (OpenFileDialogBG.ShowDialog() == DialogResult.OK)
+            openFileDialogBg.FileName = "";
+            if (openFileDialogBg.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
 
-                    Image<Bgr, Byte> BGL = new Image<Bgr, Byte>(OpenFileDialogBG.FileName);
+                    Image<Bgr, Byte> BGL = new Image<Bgr, Byte>(openFileDialogBg.FileName);
                     BG = BGL;
                 }
 
                 catch (NullReferenceException excpt)
                 {
-                    TextBox.AppendText(excpt.Message);
+                    textBox1.AppendText(excpt.Message);
                 }
             }
         }

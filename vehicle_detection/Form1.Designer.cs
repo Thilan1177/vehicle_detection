@@ -43,15 +43,15 @@
             // 
             // imageBox1
             // 
-            this.imageBox1.Location = new System.Drawing.Point(12, 24);
+            this.imageBox1.Location = new System.Drawing.Point(12, 12);
             this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(311, 270);
+            this.imageBox1.Size = new System.Drawing.Size(336, 270);
             this.imageBox1.TabIndex = 2;
             this.imageBox1.TabStop = false;
             // 
             // imageBox2
             // 
-            this.imageBox2.Location = new System.Drawing.Point(373, 24);
+            this.imageBox2.Location = new System.Drawing.Point(374, 12);
             this.imageBox2.Name = "imageBox2";
             this.imageBox2.Size = new System.Drawing.Size(317, 270);
             this.imageBox2.TabIndex = 2;
@@ -59,7 +59,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 354);
+            this.textBox1.Location = new System.Drawing.Point(12, 317);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(429, 108);
@@ -67,9 +67,9 @@
             // 
             // imagebutton
             // 
-            this.imagebutton.Location = new System.Drawing.Point(126, 310);
+            this.imagebutton.Location = new System.Drawing.Point(128, 288);
             this.imagebutton.Name = "imagebutton";
-            this.imagebutton.Size = new System.Drawing.Size(75, 23);
+            this.imagebutton.Size = new System.Drawing.Size(82, 23);
             this.imagebutton.TabIndex = 4;
             this.imagebutton.Text = "Image";
             this.imagebutton.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // backgroundbutton
             // 
-            this.backgroundbutton.Location = new System.Drawing.Point(494, 310);
+            this.backgroundbutton.Location = new System.Drawing.Point(494, 288);
             this.backgroundbutton.Name = "backgroundbutton";
-            this.backgroundbutton.Size = new System.Drawing.Size(75, 23);
+            this.backgroundbutton.Size = new System.Drawing.Size(88, 23);
             this.backgroundbutton.TabIndex = 5;
             this.backgroundbutton.Text = "Background";
             this.backgroundbutton.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // 
             // processbutton
             // 
-            this.processbutton.Location = new System.Drawing.Point(494, 370);
+            this.processbutton.Location = new System.Drawing.Point(494, 339);
             this.processbutton.Name = "processbutton";
             this.processbutton.Size = new System.Drawing.Size(88, 62);
             this.processbutton.TabIndex = 6;
