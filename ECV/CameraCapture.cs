@@ -18,10 +18,6 @@ namespace ECV
     {
         Image<Bgr, Byte> frame;
         Image<Bgr, Byte> BG;
-        Image<Gray, Byte> frameGrayOriginal;
-        Image<Gray, Byte> resultImage;
-        int count = 0;
-        Rectangle r;
         String name;
 
         public CameraCapture()
