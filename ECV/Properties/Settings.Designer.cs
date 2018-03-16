@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vehicle_detection.Properties
+namespace ECV.Properties
 {
 
 

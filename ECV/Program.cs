@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace vehicle_detection
+namespace ECV
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace vehicle_detection
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new CameraCapture());
         }
     }
 }
