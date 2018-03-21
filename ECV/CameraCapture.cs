@@ -18,6 +18,7 @@ namespace ECV
     {
         Image<Bgr, Byte> frame;
         Image<Bgr, Byte> BG;
+        Image<Gray, Byte> frameGrayOriginal;
         String name;
 
         public CameraCapture()
@@ -69,7 +70,30 @@ namespace ECV
 
         private void ptnProcess_Click(object sender, EventArgs e)
         {
+            var filePath = @"data.csv";
 
+            using (var wr = new StreamWriter(filePath, true, System.Text.Encoding.UTF8))
+            {
+                var sb = new System.Text.StringBuilder();
+
+                sb.Append(name);
+                sb.Append(",");
+
+                frameGrayOriginal = frame.Convert<Gray, Byte>().PyrDown().PyrUp();
+                Image<Gray, Byte> frameGray = frame.Convert<Gray, Byte>().PyrDown().PyrUp();
+                Image<Gray, Byte> BGGray = BG.Convert<Gray, Byte>().PyrDown().PyrUp();
+
+                CvInvoke.cvAbsDiff(BGGray, frameGray, frameGray);
+
+                OriginalImageBox.Image = frameGray;
+
+                CvInvoke.cvSmooth(frameGray, frameGray, SMOOTH_TYPE.CV_GAUSSIAN, 15, 15, 3, 1);
+
+                frameGray = frameGray.ThresholdBinary(new Gray(60), new Gray(255));
+
+                //OriginalImageBox.Image = frameGrayOriginal;
+
+            }
         }
 
 
