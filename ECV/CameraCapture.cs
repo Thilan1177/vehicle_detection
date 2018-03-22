@@ -19,6 +19,7 @@ namespace ECV
         Image<Bgr, Byte> frame;
         Image<Bgr, Byte> BG;
         Image<Gray, Byte> frameGrayOriginal;
+        Image<Gray, Byte> resultImage;
         String name;
 
         public CameraCapture()
@@ -92,6 +93,18 @@ namespace ECV
                 frameGray = frameGray.ThresholdBinary(new Gray(60), new Gray(255));
 
                 //OriginalImageBox.Image = frameGrayOriginal;
+
+
+                StructuringElementEx rect_6 = new StructuringElementEx(8, 8, 5, 5, Emgu.CV.CvEnum.CV_ELEMENT_SHAPE.CV_SHAPE_RECT);
+
+                //dilating the source image using the specified structuring element
+                CvInvoke.cvDilate(frameGray, frameGray, rect_6, 6);
+
+                StructuringElementEx rect_12 = new StructuringElementEx(4, 4, 3, 3, Emgu.CV.CvEnum.CV_ELEMENT_SHAPE.CV_SHAPE_RECT);
+
+                //Eroding the source image using the specified structuring element
+                CvInvoke.cvErode(frameGray, frameGray, rect_12, 4);
+                resultImage = frameGray.And(frameGrayOriginal);
 
             }
         }
