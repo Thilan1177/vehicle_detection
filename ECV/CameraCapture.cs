@@ -20,6 +20,7 @@ namespace ECV
         Image<Bgr, Byte> BG;
         Image<Gray, Byte> frameGrayOriginal;
         Image<Gray, Byte> resultImage;
+        Rectangle r;
         String name;
 
         public CameraCapture()
@@ -106,9 +107,44 @@ namespace ECV
                 CvInvoke.cvErode(frameGray, frameGray, rect_12, 4);
                 resultImage = frameGray.And(frameGrayOriginal);
 
+                FindLargestObject();
+
             }
         }
 
+        public void FindLargestObject()
+        {
+            Contour<Point> largestContour = null;
+            double largestarea = 0;
+
+            using (MemStorage store = new MemStorage())
+                for (var contours = resultImage.FindContours(CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_SIMPLE, RETR_TYPE.CV_RETR_EXTERNAL); contours != null; contours = contours.HNext)
+                {
+                    if (contours.Area > largestarea)
+                    {
+                        largestarea = contours.Area;
+                        largestContour = contours;
+
+                    }
+                }
+
+            r = CvInvoke.cvBoundingRect(largestContour, 1);
+            //frameGrayOriginal.Draw(r, new Gray(255), 5);
+
+            Rectangle temp = r;
+
+            resultImage.ROI = r;
+            frame.ROI = r;
+
+            temp.Location = new Point(temp.Left, (temp.Top + temp.Height / 2));
+            temp.Height = temp.Height / 2;
+
+            frameGrayOriginal.ROI = temp;
+
+            //ProcessImageBox.Image = resultImage;
+            //OriginalImageBox.Image = mask;
 
         }
+
+    }
     }
