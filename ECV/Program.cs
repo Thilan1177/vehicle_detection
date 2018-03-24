@@ -16,7 +16,7 @@ namespace ECV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CameraCapture());
+            Application.Run(new Login());
         }
     }
 }

@@ -19,12 +19,23 @@ namespace ECV
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Recognition re = new Recognition();
+            re.Show();
+            this.Hide();
         }
 
         private void buttonImageProcessing_Click(object sender, EventArgs e)
         {
+            CameraCapture cc = new CameraCapture();
+            cc.Show();
+            this.Hide();
+        }
 
+        private void processImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CameraCapture cc = new CameraCapture();
+            cc.Show();
+            this.Hide();
         }
     }
 }

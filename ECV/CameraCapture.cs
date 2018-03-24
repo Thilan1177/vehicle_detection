@@ -109,6 +109,18 @@ namespace ECV
 
                 FindLargestObject();
 
+                TextBox.AppendText("Height : " + r.Height.ToString() + "\n");
+                sb.Append(r.Height);
+                sb.Append(",");
+                TextBox.AppendText("Width : " + r.Width.ToString() + "\n");
+                sb.Append(r.Width);
+                sb.Append(",");
+                TextBox.AppendText("Ratio : " + ((float)r.Width / (float)r.Height).ToString() + "\n");
+                sb.Append((float)r.Width / (float)r.Height);
+                sb.Append(",");
+
+
+
             }
         }
 
@@ -146,5 +158,9 @@ namespace ECV
 
         }
 
+        private void OriginalImageBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }

@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace ECV
 {
-    public partial class Login : Form
+    public partial class Recognition : Form
     {
-        public Login()
+        public Recognition()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Recognition_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Menu menu = new Menu();
-            menu.Show();
-            this.Hide();
         }
     }
 }

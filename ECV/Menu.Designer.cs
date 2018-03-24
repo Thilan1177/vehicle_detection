@@ -70,6 +70,7 @@
             this.processImageToolStripMenuItem.Name = "processImageToolStripMenuItem";
             this.processImageToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.processImageToolStripMenuItem.Text = "Process Image";
+            this.processImageToolStripMenuItem.Click += new System.EventHandler(this.processImageToolStripMenuItem_Click);
             // 
             // recognizeImageToolStripMenuItem
             // 
