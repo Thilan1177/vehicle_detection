@@ -681,10 +681,10 @@ namespace ECV
 
                     sb.Append(circles[0].Radius);
                     sb.Append(",");
-                    //sb.Append(circles[1].Radius);
+                    sb.Append(circles[1].Radius);
                     sb.Append(",");
-                    //double dist = Math.Sqrt(Math.Pow(circles[0].Center.X - circles[1].Center.X, 2) + Math.Pow(circles[0].Center.Y - circles[1].Center.Y, 2));
-                    //sb.Append(dist);
+                    double dist = Math.Sqrt(Math.Pow(circles[0].Center.X - circles[1].Center.X, 2) + Math.Pow(circles[0].Center.Y - circles[1].Center.Y, 2));
+                    sb.Append(dist);
                     sb.Append(",");
                     //TextBox.AppendText("circles : " + circles.Length.ToString() + "\n");
                     sb.Append(circles.Length);
